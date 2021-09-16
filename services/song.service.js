@@ -22,14 +22,23 @@ const SongService = {
     }
     await SongRepository.update(id, songInfo);
   },
-  isBetter: (song1, song2) => {
+  isLonger: (song1, song2) => {
     if (!song1) {
       throw Error("song1 is null");
     }
     if (!song2) {
       throw Error("song2 is null");
     }
-    return song1.note > song2.note;
+    return song1.duree > song2.duree;
+  },
+  isFromSameArtist: (song1, song2) => {
+    if (!song1) {
+      throw Error("song1 is null");
+    }
+    if (!song2) {
+      throw Error("song2 is null");
+    }
+    return (song1.auteur == song2.auteur);
   },
 };
 

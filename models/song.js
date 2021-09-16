@@ -7,18 +7,25 @@ module.exports = (sequelize, Sequelize) => {
     },
     genre: {
       type: Sequelize.STRING,
+      maxlength: 80,
+      required: false,
     },
     titre: {
       type: Sequelize.STRING,
+      maxlength: 80,
+      required: true,
     },
     duree: {
       type: Sequelize.INTEGER,
+      required: false,
       validate: {
         min: 0
       },
     },
     auteur: {
       type: Sequelize.STRING,
+      maxlength: 100,
+      required: true,
     },
   });
 
